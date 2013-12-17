@@ -6,6 +6,7 @@ gem 'sinatra'
 gem 'shotgun'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
+gem 'bcrypt-ruby'
 
 group :devlopment, :test do 
   gem "rspec"
