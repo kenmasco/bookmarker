@@ -7,6 +7,7 @@ gem 'shotgun'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'bcrypt-ruby'
+gem 'rack-flash3'
 
 group :devlopment, :test do 
   gem "rspec"
