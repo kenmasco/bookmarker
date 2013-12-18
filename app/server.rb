@@ -11,6 +11,7 @@ DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{env}")
 require './lib/link' #this needs to be done after DataMapper is initalised
 require './lib/tag'
 require './lib/user'
+require './app/helpers/application'
 #After declaring your models, you should finalise them
 DataMapper.finalize
 
@@ -67,12 +68,7 @@ post '/users' do
   end
 end
 
-helpers do 
-  def current_user
-    @current_user ||=User.get(session[:user_id]) if session[:user_id]
-  end
 
-end
 
 
 
