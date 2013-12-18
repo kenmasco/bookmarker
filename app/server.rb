@@ -25,6 +25,7 @@ DataMapper.auto_upgrade!
 # DataMapper.auto_migrate!
 # Finally, don't forget that before you do any of that stuff, you need to create a database first.
 use Rack::Flash
+use Rack::MethodOverride
 enable :sessions
 set :session_secret, 'super sweet secret'
 
@@ -82,6 +83,12 @@ post '/sessions' do
     flash[:errors] = ["The email or password are incorrect"]
     erb :"sessions/new"
   end
+end
+
+delete '/sessions' do
+  flash[:notice] = "Good bye!"
+  session[:user_id] = nil
+  erb :"sessions/new"
 end
 
 
